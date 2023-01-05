@@ -1,0 +1,21 @@
+{
+  "name": "Grosir UB BAROKAH App ",
+  "short_name": "UB",
+  "description": "Membuat Aplikasi Grosir Grosir UB BAROKAH sederhana dengan javascript PWA",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#1F3641",
+  "background_color": "#ffffff",
+  "prefer_related_applications": false
+}

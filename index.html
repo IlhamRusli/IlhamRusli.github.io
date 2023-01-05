@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/x-icon" href="/icon-192.jpg">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <title>Grosir UB BAROKAH</title>
+
+  <style>
+    label.error {
+        color: #F94687;
+        font-size: 13px;
+        font-size: .875rem;
+        font-weight: 400;
+        line-height: 1.5;
+        margin-top: 5px;
+        padding: 0;
+    }
+
+     input.error {
+        color: #F94687;
+        border: 1px solid #F94687;
+    }
+
+    .background {
+      background-color: #058525;
+      z-index: 10000000000;
+      height: 100vh;
+      width: 100%;
+      position: absolute;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background" id="background">
+    <div class="wrap-in d-flex justify-content-center align-items-center" style="height: 100vh;">
+      <img width="100" src="icon-192.png" alt="">
+      <h1 class="text-white ml-5">Grosir UB BAROKAH</h1>
+    </div>
+  </div>
+
+  <div class="wrap" style="width:80% ;margin: auto;">
+    <nav class="navbar navbar-dark bg-success">
+
+      <div class="container">
+        <div class="navbar-brand">
+          <img width="50" src="icon-192.png" alt="">
+          <span>Grosir UB BAROKAH</span>
+        </div>
+        
+      </div>
+    </nav>
+  
+    <fieldset>
+      <legend style="margin-top:30px ;">Masukan Data</legend>
+      <select name="jenis_barang" id="jenis_barang" class="form-select" style="max-width: 300px;">
+        <option value="Minyak">Minyak</option>
+        <option value="Beras">Beras</option>
+        <option value="Telur">Telur</option>
+        <option value="Terigu">Terigu</option>
+        <option value="Tepung Tapioka">Tepung Tapioka</option>
+        <option value="Garam">Garam</option>
+        <option value="Gula">Gula</option>
+      </select>
+  
+      <input type="text" name="jumlah" placeholder="Jumlah Barang" id="jumlah" class="form-control mt-2"
+        style="max-width: 300px;">
+      <label id="error_jumlah" class="error" style="display: none;">Jumlah Barang harus diisi.</label>
+  
+      <input type="button" onclick="addBarang()" value="Tambah" class="btn btn-success btn-sm mt-2 mb-2">
+    </fieldset>
+  
+    <table id="table" border="0" class="table table-hover text-center">
+    </table>
+  
+    <table>
+      <th>Total = </th>
+      <th><span id="total_bayar"></span></th>
+    </table>
+  
+    <button type="button" class="btn btn-sm btn-outline-primary mt-3" onclick="window.print()">Print</button>
+
+  
+  </div>
+  
+  <script src="assets/js/register.js"></script>
+  <script src="service-worker.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="assets/js/fungsi.js"></script>
+
+
+  <script>
+      const myTimeout = setTimeout(backgroundChange, 800);
+
+      function backgroundChange(time) {
+        $("#background").animate({opacity: 0}, time);
+      }
+  </script>
+</body>
+
+</html>
